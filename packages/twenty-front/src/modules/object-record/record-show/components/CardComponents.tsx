@@ -3,6 +3,7 @@ import { EmailThreads } from '@/activities/emails/components/EmailThreads';
 import { Attachments } from '@/activities/files/components/Attachments';
 import { Notes } from '@/activities/notes/components/Notes';
 import { ObjectTasks } from '@/activities/tasks/components/ObjectTasks';
+import { SMSTexts } from '@/activities/texts/components/SMSTexts';
 import { TimelineActivities } from '@/activities/timeline-activities/components/TimelineActivities';
 import { ActivityTargetableObject } from '@/activities/types/ActivityTargetableEntity';
 import { FieldsCard } from '@/object-record/record-show/components/FieldsCard';
@@ -106,5 +107,9 @@ export const CardComponents: Record<CardType, CardComponentType> = {
   ),
   [CardType.WorkflowRunOutputCard]: ({ targetableObject }) => (
     <WorkflowRunOutputVisualizer workflowRunId={targetableObject.id} />
+  ),
+
+  [CardType.SMSTextCard]: ({ targetableObject }) => (
+    <SMSTexts targetableObject={targetableObject} />
   ),
 };
